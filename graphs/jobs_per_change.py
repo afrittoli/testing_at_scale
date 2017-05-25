@@ -10,8 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from oslo_config import cfg
 from sqlalchemy import func
 from sqlalchemy.orm import aliased
@@ -91,6 +92,7 @@ def plot_histogram(labels, data):
     series = pd.Series(data, index=labels)
     title = 'Average gate jobs per project'
     plot = series.plot(kind='bar', stacked=False).set_title(title)
+    plt.tight_layout()
     fig = plot.get_figure()
     fig.savefig('gate_jobs.png')
 
