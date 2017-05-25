@@ -103,15 +103,8 @@ def main():
     for project in project_data:
         changes = project_data[project]
         values = list(changes.values())
-        max_value = np.max(values)
-        max_change = [k for k in changes if changes[k] == max_value][0]
-        change, patchset = max_change.split(":")
-        all_counts = get_job_counts_per_change(change, patchset, session)
-        min_job_num = max_value / np.max(list(all_counts.values()))
         averages.append(np.mean(values))
-        print("{0} avg {avg:.2f}, min {min:.2f}".format(project,
-                                                        avg=averages[-1],
-                                                        min=min_job_num))
+
     labels = [x.split("/")[1] for x in project_data]
     plot_histogram(labels, averages)
 

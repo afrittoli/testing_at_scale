@@ -1,3 +1,4 @@
 subunit2sql
 pymysql
+matplotlib
 pandas
