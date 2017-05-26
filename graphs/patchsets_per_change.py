@@ -43,17 +43,19 @@ def get_patchset_numbers():
 def plot_histogram(labels, data):
     series = pd.Series(data, index=labels)
     title = 'Average number of patchset (last 1000 changes)'
-    plot = series.plot(kind='bar', stacked=False).set_title(title)
+    plot = series.plot(kind='barh', stacked=False).set_title(title)
     plt.tight_layout()
     fig = plot.get_figure()
     fig.savefig('patchsets_per_change.png')
 
 
-def main()::
+def main():
     data = get_patchset_numbers()
-    labels = [x.split("/")[1] for x in data]
-    data_points = [np.mean(data[x]) for x in data]
-    plot_histogram(labels, data_points)
+    data_points = [(x, np.mean(data[x])) for x in data]
+    data_points.sort(key=lambda tup: tup[1])
+    labels = [x[0].split("/")[1] for x in data_points]
+    sorted_data = [x[1] for x in data_points]
+    plot_histogram(labels, sorted_data)
 
 if __name__ == "__main__":
     sys.exit(main())

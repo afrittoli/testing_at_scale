@@ -91,7 +91,8 @@ def get_job_counts_per_change(change, patchset, session=None):
 def plot_histogram(labels, data):
     series = pd.Series(data, index=labels)
     title = 'Average gate jobs per project'
-    plot = series.plot(kind='bar', stacked=False).set_title(title)
+    plot = series.plot(kind='bar', stacked=False,
+                       color=[(0.58, 0, 0.01)]).set_title(title)
     plt.tight_layout()
     fig = plot.get_figure()
     fig.savefig('jobs_per_change.png')
@@ -105,10 +106,13 @@ def main():
     for project in project_data:
         changes = project_data[project]
         values = list(changes.values())
-        averages.append(np.mean(values))
+        averages.append((project, np.mean(values)))
 
-    labels = [x.split("/")[1] for x in project_data]
-    plot_histogram(labels, averages)
+    # sort by the 2nd column (avg)
+    averages.sort(key=lambda tup: tup[1]) 
+    labels = [x[0].split("/")[1] for x in averages]
+    data = [x[1] for x in averages]
+    plot_histogram(labels, data)
 
 
 if __name__ == "__main__":
