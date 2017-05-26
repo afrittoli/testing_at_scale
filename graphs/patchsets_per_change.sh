@@ -10,4 +10,4 @@ fi
 source $VENV/bin/activate
 pip install -r $BASE_DIR/requirements.txt
 
-python $BASE_DIR/jobs_per_change.py --config-file $BASE_DIR/subunit2sql.conf
+python $BASE_DIR/patchsets_per_change.py

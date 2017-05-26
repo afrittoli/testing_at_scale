@@ -108,15 +108,18 @@
 \begin{frame}
     \frametitle{Life as a contributor}
     \begin{figure}
-    \begin{center}
-    	\includegraphics[width=0.5\textwidth]{gate_jobs.png}
-         \caption{Source: subunit2sql DB}
-    \end{center}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+    	   \includegraphics[width=1\textwidth]{jobs_per_change.png}
+            \caption{Source: subunit2sql DB}
+        \end{minipage}
+        \hspace{0.5cm}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+    	   \includegraphics[width=1\textwidth]{patchsets_per_change.png}
+            \caption{Source: Gerrit API}
+        \end{minipage}
     \end{figure}
-    \begin{itemize}
-        \item{Graph about number of jobs per patch-set}
-        \item{Graph about average number of patch-sets}
-    \end{itemize}
 \end{frame}
 
 \begin{frame}

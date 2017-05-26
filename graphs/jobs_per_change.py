@@ -94,7 +94,7 @@ def plot_histogram(labels, data):
     plot = series.plot(kind='bar', stacked=False).set_title(title)
     plt.tight_layout()
     fig = plot.get_figure()
-    fig.savefig('gate_jobs.png')
+    fig.savefig('jobs_per_change.png')
 
 
 def main():

@@ -1,3 +1,4 @@
+requests
 subunit2sql
 pymysql
 matplotlib

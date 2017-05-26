@@ -161,3 +161,4 @@ TSWLatexianTemp*
 # Git repos
 data/git
 graphs/.jpc
+graphs/.graphs
