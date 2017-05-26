@@ -52,6 +52,7 @@
 \setbeamerfont{caption}{series=\normalfont,size=\fontsize{6}{8}}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
+
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\floatsep}{0pt}
 
@@ -94,15 +95,19 @@
 
 \begin{frame}
     \frametitle{OpenStack CI in Numbers}
-    \begin{figure}
-    \begin{center}
-    	\includegraphics[width=0.5\textwidth]{zuul_all_jobs.png}
-         \caption{Source: Zuul, Graphite}
-    \end{center}
-    \end{figure}
+       \begin{columns}
+        \column{0.4\linewidth}
     \begin{itemize}
         \item{2nd graph?}
     \end{itemize}
+        \column{0.6\linewidth}
+    \begin{figure}
+    \begin{center}
+    	\includegraphics[width=1\textwidth]{zuul_all_jobs.png}
+         \caption{Source: Zuul, Graphite}
+    \end{center}
+    \end{figure}
+       \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -125,8 +130,15 @@
 \begin{frame}
     \frametitle{My day in reviews}
     \begin{itemize}
-        \item{Pciture about patch size}
-        \item{Example of patch that passes the gate but stops running tests}
+        \item{Change in devstack:}
+    \end{itemize}
+    \begin{figure}
+    \lstinputlisting[basicstyle=\tiny,language=bash]{code/devstack_patch.sh}
+    \caption{Source: https://review.openstack.org/\#/c/468060/2/lib/tempest@536}
+    \end{figure}
+    \begin{itemize}
+        \item{CI reports all green}
+        \item{Can you see the error?}
     \end{itemize}
 \end{frame}
 
