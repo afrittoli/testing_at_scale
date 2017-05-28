@@ -137,7 +137,7 @@
     \end{itemize}
     \begin{figure}
     \lstinputlisting[basicstyle=\tiny,language=bash]{code/devstack_patch.sh}
-    \caption{Source: https://review.openstack.org/\#/c/468060/2/lib/tempest@536}
+    \caption{Source: \href{https://review.openstack.org/\#/c/468060/2/lib/tempest@536}{https://review.openstack.org/468060}}
     \end{figure}
     \begin{itemize}
         \item{CI reports all green}
@@ -147,9 +147,24 @@
 
 \begin{frame}
     \frametitle{Keep the gate flowing}
+       \begin{columns}
+        \column{0.4\linewidth}
     \begin{itemize}
-        \item{List of gate issues at beginning of pike}
+        \item{Number of services}
+        \item{Service memory footprint}
+        \item{Test load}
+        \item{Libvirt instability under load}
+        \item{Tempest bug in ssh test code}
+        \item{Vanilla database configuration}
     \end{itemize}
+        \column{0.6\linewidth}
+    \begin{figure}
+    \begin{center}
+    	\includegraphics[width=1\textwidth]{failure_rate.png}
+         \caption{Source: Zuul, Graphite}
+    \end{center}
+    \end{figure}
+       \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -202,6 +217,14 @@
         \item{TBD}
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{References}
+    \begin{itemize}
+        \item{}
+    \end{itemize}
+\end{frame}
+
 
 \section{Questions}
 \begin{frame}[c]
