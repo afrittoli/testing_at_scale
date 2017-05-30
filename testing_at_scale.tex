@@ -113,6 +113,63 @@
        \end{columns}
 \end{frame}
 
+\note{Describe OpenStack CI today in numbers}
+
+\begin{frame}
+    \frametitle{Testing OpenStack}
+       \begin{columns}
+        \column{0.6\linewidth}
+    \begin{figure}
+    \begin{center}
+    	\includegraphics[width=1\textwidth]{zuul_status.png}
+         \caption{Source: \href{http://status.openstack.org/zuul}{http://status.openstack.org/zuul}}
+    \end{center}
+    \end{figure}
+        \column{0.4\linewidth}
+    \begin{itemize}
+        \item{Release ready master}
+        \item{Check \& Gate Pipelines}
+        \item{Ephemeral test system}
+    \end{itemize}
+       \end{columns}
+\end{frame}
+
+\note{Quick explanation about how OpenStack CI works}
+
+\begin{frame}
+    \frametitle{Beyond the gate}
+    \begin{itemize}
+        \item{Periodic jobs, post etc}
+    \end{itemize}
+\end{frame}
+
+\note{Details about extra stuff and how it's hard to get visibility on it}
+
+\begin{frame}
+    \frametitle{The unbalanced scale}
+    \begin{columns}
+         \column{0.3\linewidth}
+             \begin{itemize}
+                 \item{Core reviewers}
+                 \item{Horizontal teams}
+                 \item{Running CI}
+             \end{itemize}
+         \column{0.4\linewidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth]{unbalanced_scale.png}
+                \caption{Not the scale I meant...}
+            \end{figure}
+         \column{0.3\linewidth}
+             \begin{itemize}
+                 \item{Commits}
+                 \item{\# of Tests}
+                 \item{\# of Configurations}
+             \end{itemize}
+    \end{columns}
+\end{frame}
+
+\note{Complexity grows. Amount of testing grows. Contribution grow, but not in a balanced way.}
+
 \begin{frame}
     \frametitle{Life as a contributor}
     \begin{figure}
@@ -130,6 +187,8 @@
     \end{figure}
 \end{frame}
 
+\note{How does scale-up impact contributors?}
+
 \begin{frame}
     \frametitle{My day in reviews}
     \begin{itemize}
@@ -144,6 +203,8 @@
         \item{Can you see the error?}
     \end{itemize}
 \end{frame}
+
+\note{How does scale-up impact reviewers?}
 
 \begin{frame}
     \frametitle{Keep the gate flowing}
@@ -167,12 +228,7 @@
        \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{How it works}
-    \begin{itemize}
-        \item{TBD}
-    \end{itemize}
-\end{frame}
+\note{How does scale-up impact gate maintainers?}
 
 \begin{frame}
     \frametitle{Data!}
@@ -183,22 +239,10 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Beyond the gate}
-    \begin{itemize}
-        \item{Periodic jobs}
-    \end{itemize}
-\end{frame}
+\note{Luckily we have data. Is that enough?}
 
 \begin{frame}
     \frametitle{Tools}
-    \begin{itemize}
-        \item{TBD}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{More Automation}
     \begin{itemize}
         \item{TBD}
     \end{itemize}
