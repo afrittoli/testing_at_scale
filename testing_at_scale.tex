@@ -138,9 +138,18 @@
 
 \begin{frame}
     \frametitle{Beyond the gate}
-    \begin{itemize}
-        \item{Periodic jobs, post etc}
-    \end{itemize}
+    \begin{columns}
+         \column{0.3\linewidth}
+            \begin{itemize}
+                \item{Periodic tests}
+                \item{Release jobs}
+            \end{itemize}
+         \column{0.7\linewidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth]{periodic_jobs.png}
+                \caption{Reference: \href{http://status.openstack.org/openstack-health/\#/g/build_queue/periodic}{status.openstack.org/openstack-health/}}
+            \end{figure}
+    \end{columns}
 \end{frame}
 
 \note{Details about extra stuff and how it's hard to get visibility on it}
