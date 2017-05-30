@@ -92,7 +92,7 @@ def plot_histogram(labels, data):
     series = pd.Series(data, index=labels)
     title = 'Average gate jobs per project'
     plot = series.plot(kind='bar', stacked=False,
-                       color=[(0.58, 0, 0.01)]).set_title(title)
+                       color=(0.58, 0, 0.01)).set_title(title)
     plt.tight_layout()
     fig = plot.get_figure()
     fig.savefig('jobs_per_change.png')

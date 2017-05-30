@@ -1,4 +1,16 @@
 #!/bin/bash
 
+BASE_DIR=$(cd $(dirname $0); pwd)
+VENV=${BASE_DIR}/.graphs
+
+if [ ! -d $VENV ]; then
+    python3 -mvenv $VENV
+fi
+
 # Get the zuul all_jobs graph
-curl "http://graphite.openstack.org/render/?from=-150days&until=now&height=1200&width=1600&bgcolor=ffffff&fgcolor=000000&yMax=40&yMin=0&vtitle=Failure%20Rate%20in%20Percent&title=Test%20failure%20rates%20over%20last+5+months%20(3+days%20rolling%20average)&drawNullAsZero=true&target=lineWidth(%20color(%20%20alias(%20%20%20%20movingAverage(%20%20%20%20%20asPercent(%20%20%20%20%20%20transformNull(%20%20%20%20%20%20%20stats_counts.zuul.pipeline.gate.job.gate-tempest-dsvm-neutron-full-ubuntu-xenial.FAILURE),%20%20%20%20%20%20transformNull(%20%20%20%20%20%20%20sum(stats_counts.zuul.pipeline.gate.job.gate-tempest-dsvm-neutron-full-ubuntu-xenial.%7BSUCCESS,FAILURE%7D))),%20%20%20%20%20'3day'),%20%20%20%20'gate-tempest-dsvm-neutron-full-ubuntu-xenial%20(gate)'),%20'b00000'),6)&hideLegend=True&fontSize=20&hideGrid=true&margin=40" > failure_rate.png
+curl "http://graphite.openstack.org/render/?from=-150days&until=now&target=movingAverage(asPercent(transformNull(stats_counts.zuul.pipeline.gate.job.gate-tempest-dsvm-neutron-full-ubuntu-xenial.FAILURE),transformNull(sum(stats_counts.zuul.pipeline.gate.job.gate-tempest-dsvm-neutron-full-ubuntu-xenial.%7BSUCCESS,FAILURE%7D))),'1d')&format=csv" | awk -F',' '{ print $7","$8 }' > $BASE_DIR/failure_rate.csv
+
+source $VENV/bin/activate
+pip install -r $BASE_DIR/requirements.txt
+
+python $BASE_DIR/failure_rate.py
