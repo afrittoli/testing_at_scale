@@ -89,7 +89,7 @@
     \setbeamercolor{background}{bg=openstack}
     \titlepage{}
     \centering
-    \href{https://github.com/andreafrittoli/tempest\_at\_scale}{https://github.com/andreafrittoli/testing\_at\_scale}
+    \href{https://github.com/andreafrittoli/testing\_at\_scale}{https://github.com/andreafrittoli/testing\_at\_scale}
 \end{frame}
 }
 
@@ -224,7 +224,7 @@
         \item{Service memory footprint}
         \item{Test load}
         \item{Libvirt instability under load}
-        \item{Tempest bug in ssh test code}
+        \item{\href{https://review.openstack.org/\#/c/439638/}{Tempest bug in ssh test code}}
         \item{Vanilla database configuration}
     \end{itemize}
         \column{0.6\linewidth}
@@ -251,18 +251,18 @@
             \item{libvirt logs}
         \end{itemize}
         \item{Test result data}
-        \item{Zuul, nodepool, gerrit event streams}
+        \item{Zuul, nodepool and gerrit event streams}
     \end{itemize}
 \end{frame}
 
-\note{Luckily we have data. Is that enough?}
+\note{Luckily we have data. A lot for one contributor. Too much for reviewers. Unmanageable for gate maintainers.}
 
 \begin{frame}
     \frametitle{Single run view}
     \begin{itemize}
         \item{Deeplink into logs}
         \item{HTML view of tests}
-        \item{Stackviz pic}
+        \item{Stackviz}
     \end{itemize}
 \end{frame}
 
@@ -271,24 +271,49 @@
 \begin{frame}
     \frametitle{Deeper into data}
     \begin{itemize}
-        \item{ELK, Elastic Recheck}
-        \item{OpenStack Health}
+        \item{ELK, Elastic Recheck \href{http://status.openstack.org/elastic-recheck/}{[DEMO: http://status.openstack.org/elastic-recheck/]}}
+        \item{OpenStack Health \href{http://status.openstack.org/openstack-health/\#/}{[DEMO: http://status.openstack.org/openstack-health/]}}
+    \end{itemize}
+\end{frame}
+
+\note{Explain and Demo E-R and O-H}
+
+\begin{frame}
+    \frametitle{Event streams}
+    \begin{itemize}
+        \item{Graphite: \href{http://graphite.openstack.org}{http://graphite.openstack.org}}
+        \item{Grafana: \href{http://grafana.openstack.org}{http://grafana.openstack.org}}
+        \item{Firehose: \href{https://docs.openstack.org/infra/system-config/firehose.html}{https://docs.openstack.org/infra/system-config/firehose.html}}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Playing with AI}
+    \frametitle{Playing with Machine Learning}
     \begin{itemize}
-        \item{AI for the three actors}
-        \item{Smarter automation}
-        \item{What I've done so far}
+        \item{Long Short Term Memory network, RNN}
+        \item{Trained with nova logs from periodic test runs}
+    \end{itemize}
+    \begin{itemize}
+        \item{DEMO}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AI to the rescue}
+    \begin{itemize}
+        \item{Make unusual log lines emerge}
+    \end{itemize}
+    \begin{itemize}
+        \item{Help identitify new elastich recheck signatures}
+        \item{Catch changes in behaviour that we do not test for}
+        \item{Help review process}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{References}
     \begin{itemize}
-        \item{}
+        \item{https://github.com/sherjilozair/char-rnn-tensorflow}
     \end{itemize}
 \end{frame}
 
