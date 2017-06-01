@@ -259,7 +259,7 @@
             \item{system metrics (dstat data)}
             \item{libvirt logs}
         \end{itemize}
-        \item{Test result data (Zuul \& subunit}
+        \item{Test result data (Zuul \& subunit)}
         \item{Gerrit event streams}
     \end{itemize}
 \end{frame}
@@ -268,11 +268,19 @@
 
 \begin{frame}
     \frametitle{Single run view}
-    \begin{itemize}
-        \item{Deeplink into logs}
-        \item{HTML view of tests}
-        \item{Stackviz}
-    \end{itemize}
+    \begin{columns}
+         \column{0.3\linewidth}
+        \begin{itemize}
+            \item{Deeplink into logs}
+            \item{HTML view of tests}
+            \item{Stackviz}
+        \end{itemize}
+         \column{0.7\linewidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth]{stackviz.png}
+                \caption{Reference: \href{http://logs.openstack.org/22/466822/1/gate/gate-tempest-dsvm-neutron-full-ubuntu-xenial/d6f19c0/logs/stackviz/\#/stdin/timeline?test=tempest.api.network.test_dhcp_ipv6.NetworksTestDHCPv6.test_dhcpv6_stateless_no_ra}{Stackviz}}
+            \end{figure}
+    \end{columns}
 \end{frame}
 
 \note{Tools for single run data view, and how do they help the different actors}
@@ -293,6 +301,15 @@
         \item{Graphite: \href{http://graphite.openstack.org}{http://graphite.openstack.org}}
         \item{Grafana: \href{http://grafana.openstack.org}{http://grafana.openstack.org}}
         \item{Firehose: \href{https://docs.openstack.org/infra/system-config/firehose.html}{https://docs.openstack.org/infra/system-config/firehose.html}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What's next?}
+    \begin{itemize}
+        \item{System and share service metrics over time}
+        \item{CRM114}
+        \item{Artificial intelligence}
     \end{itemize}
 \end{frame}
 
