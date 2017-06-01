@@ -49,9 +49,8 @@
   stringstyle=\color{openstack},   % string literal style
 }
 
-\setbeamerfont{caption}{series=\normalfont,size=\fontsize{6}{8}}
+\setbeamerfont{caption}{series=\normalfont,size=\fontsize{8}{10}}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
-
 
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\floatsep}{0pt}
@@ -99,7 +98,7 @@
         \column{0.4\linewidth}
     \begin{itemize}
         \item{$\sim$1500 contributors to Pike}
-        \item{6 Clouds + 2 run by OpenStac	k Infra}
+        \item{6 Clouds + 2 run by OpenStack Infra}
         \item{1600+ repos in openstack(|-dev|-infra)}
         \item{20k lines Zuul configuration}
     \end{itemize}
@@ -111,6 +110,16 @@
     \end{center}
     \end{figure}
        \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{OpenStack CI in Numbers}
+    \begin{figure}
+    \begin{center}
+    	\includegraphics[width=0.7\textwidth]{daily_count.png}
+         \caption{Source: subunit2sql-graph dailycount}
+    \end{center}
+    \end{figure}
 \end{frame}
 
 \note{Describe OpenStack CI today in numbers}
@@ -250,8 +259,8 @@
             \item{system metrics (dstat data)}
             \item{libvirt logs}
         \end{itemize}
-        \item{Test result data}
-        \item{Zuul, nodepool and gerrit event streams}
+        \item{Test result data (Zuul \& subunit}
+        \item{Gerrit event streams}
     \end{itemize}
 \end{frame}
 
@@ -279,7 +288,7 @@
 \note{Explain and Demo E-R and O-H}
 
 \begin{frame}
-    \frametitle{Event streams}
+    \frametitle{Other Data Sources}
     \begin{itemize}
         \item{Graphite: \href{http://graphite.openstack.org}{http://graphite.openstack.org}}
         \item{Grafana: \href{http://grafana.openstack.org}{http://grafana.openstack.org}}
@@ -301,10 +310,10 @@
 \begin{frame}
     \frametitle{AI to the rescue}
     \begin{itemize}
-        \item{Make unusual log lines emerge}
+        \item{Make anomalous log lines emerge}
     \end{itemize}
     \begin{itemize}
-        \item{Help identitify new elastich recheck signatures}
+        \item{Help identitify new elastick recheck signatures}
         \item{Catch changes in behaviour that we do not test for}
         \item{Help review process}
     \end{itemize}
