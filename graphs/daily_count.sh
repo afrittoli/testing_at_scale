@@ -11,4 +11,3 @@ source $VENV/bin/activate
 pip install -r $BASE_DIR/requirements.txt
 
 subunit2sql-graph --start-date 2017-01-01 --output ${BASE_DIR}/../daily_count.png --config-file ${BASE_DIR}/subunit2sql.conf dailycount
-
