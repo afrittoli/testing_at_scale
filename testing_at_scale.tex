@@ -338,12 +338,23 @@
 \begin{frame}
     \frametitle{Deeper into data}
     \begin{itemize}
-        \item{ELK, Elastic Recheck \href{http://status.openstack.org/elastic-recheck/}{[DEMO: http://status.openstack.org/elastic-recheck/]}}
-        \item{Subunit2sql, OpenStack Health \href{http://status.openstack.org/openstack-health/\#/}{[DEMO: http://status.openstack.org/openstack-health/]}}
+        \item{Logstash: \href{http://logstash.openstack.org}{logstash.openstack.org}}
+        \item{Elastic Recheck: \href{http://status.openstack.org/elastic-recheck/}{http://status.openstack.org/elastic-recheck/}}
+        \item{E-R Queries: \href{http://git.openstack.org/cgit/openstack-infra/elastic-recheck/tree/queries}{git.openstack.org/openstack-infra/elastic-recheck/queries}}
     \end{itemize}
 \end{frame}
 
-\note{Explain and Demo E-R and O-H}
+\note{Explain and Demo ELK and E-R}
+
+\begin{frame}
+    \frametitle{Deeper into data}
+    \begin{itemize}
+        \item{subunit2sql \href{mysql://query:query@logstash.openstack.org/subunit2sql}{mysql://logstash.openstack.org/subunit2sql}}
+        \item{OpenStack Health \href{http://status.openstack.org/openstack-health/\#/}{[DEMO: http://status.openstack.org/openstack-health/]}}
+    \end{itemize}
+\end{frame}
+
+\note{Explain and Demo subunit2sql, subunit2sql-graph and O-H}
 
 \begin{frame}
     \frametitle{Other Data Sources}
